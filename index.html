@@ -3,253 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nostalgia Gamer | Blog de Jogos Antigos</title>
-    
+    <title>Speedrun Chronicles | O Blog do Auto-Desempenho</title>
     <style>
-        /* Configurações Gerais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #121214;
             color: #e1e1e6;
+            margin: 0;
+            padding: 0;
         }
-
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* Cabeçalho */
         header {
-            background: linear-gradient(135deg, #000428, #004e92);
-            padding: 40px 0;
+            background-color: #202024;
+            padding: 20px;
             text-align: center;
-            border-bottom: 3px solid #00dfa2;
+            border-bottom: 3px solid #00e676;
         }
-
         header h1 {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 10px;
+            margin: 0;
+            color: #00e676;
         }
-
-        header p {
-            color: #94a3b8;
-        }
-
-        /* Menu de Navegação */
         nav {
-            background-color: #1a1a1e;
-            padding: 15px 0;
-            text-align: center;
+            margin-top: 10px;
         }
-
         nav a {
-            color: #fff;
+            color: #a8a8b3;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
-            transition: color 0.3s;
-            cursor: pointer;
         }
-
-        nav a:hover, nav a.ativo {
-            color: #00dfa2;
+        nav a:hover {
+            color: #00e676;
         }
-
-        /* Área de Posts */
-        .posts {
-            margin: 40px 0;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
-
-        .post {
-            background-color: #1f1f23;
+        article {
+            background-color: #202024;
+            padding: 20px;
             border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            margin-bottom: 25px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
         }
-
-        .post:hover {
-            transform: translateY(-5px);
+        article h2 {
+            color: #ffffff;
+            margin-top: 0;
         }
-
-        /* Responsividade para telas maiores (computador) */
-        @media(min-width: 768px) {
-            .post {
-                flex-direction: row;
-            }
-            .post img {
-                width: 40%;
-                height: auto;
-                object-fit: cover;
-            }
-            .post-content {
-                width: 60%;
-            }
-        }
-
-        .post img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .post-content {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .categoria {
-            color: #121214;
-            padding: 3px 10px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            border-radius: 4px;
-            width: fit-content;
+        .meta {
+            color: #7c7c8a;
+            font-size: 0.9srem;
             margin-bottom: 15px;
         }
-
-        /* Cores das Categorias */
-        .cat-ps2 { background-color: #00dfa2; }
-        .cat-ps3ps4 { background-color: #3498db; color: #fff; }
-        .cat-emuladores { background-color: #f1c40f; }
-        .cat-lore { background-color: #9b51e0; color: #fff; }
-
-        .post h2 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .post p {
-            color: #c4c4cc;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .btn-ler {
-            background-color: transparent;
-            border: 2px solid #00dfa2;
-            color: #00dfa2;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            width: fit-content;
-            transition: all 0.3s;
-        }
-
-        .btn-ler:hover {
-            background-color: #00dfa2;
+        .categoria {
+            background-color: #00e676;
             color: #121214;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
         }
-
-        /* Rodapé */
         footer {
-            background-color: #0b0b0c;
             text-align: center;
-            padding: 20px 0;
+            padding: 20px;
             color: #7c7c8a;
             font-size: 0.9rem;
-            margin-top: 40px;
+            margin-top: 50px;
+            border-top: 1px solid #29292e;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1>Nostalgia Gamer</h1>
-            <p>O universo do PS2, clássicos do PS3/PS4 e tudo sobre Emulação!</p>
-        </div>
+        <h1>⏱️ Speedrun Chronicles</h1>
+        <p>Quebrando recordes e quebrando códigos.</p>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Categorias</a>
+            <a href="#">Sobre</a>
+        </nav>
     </header>
 
-    <nav>
-        <div class="container">
-            <a onclick="filtrarCategoria('todos', this)" class="ativo">Início</a>
-            <a onclick="filtrarCategoria('ps2', this)">PlayStation 2</a>
-            <a onclick="filtrarCategoria('ps3ps4', this)">PS3 & PS4</a>
-            <a onclick="filtrarCategoria('emuladores', this)">Emuladores</a>
-            <a onclick="filtrarCategoria('lore', this)">Speedruns & Lore</a>
-        </div>
-    </nav>
+    <div class="container">
 
-    <main class="container">
-        <section class="posts">
-            
-            <article class="post" data-categoria="lore">
-                <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=600&auto=format&fit=crop" alt="Resident Evil 4">
-                <div class="post-content">
-                    <span class="categoria cat-lore">Speedruns & Lore</span>
-                    <h2>Como o "Ditman Glitch" Quebrou o Resident Evil 4 do PS2</h2>
-                    <p>Você sabia que mirar com a Striker pode te deixar superveloz? Descubra como os speedrunners usam essa mecânica oculta e outros truques para atravessar paredes e fechar o clássico do PS2 em tempo recorde!</p>
-                    <a href="#" class="btn-ler">Ler Mais</a>
-                </div>
-            </article>
+        <article>
+            <h2>Como o Glitch de Frame-Perfect mudou a Run de Any%</h2>
+            <div class="meta">
+                Postado em 7 de Julho, 2026 por <strong>RunnerX</strong> | <span class="categoria">Glitches</span>
+            </div>
+            <p>Depois de meses de testes na comunidade, descobrimos um novo pulo que economiza exatos 4.2 segundos na fase do castelo. O truque exige um input no frame exato em que o personagem toca a quina da parede. Parece impossível, mas com treino o ciclo fecha perfeitamente...</p>
+            <a href="#" style="color: #00e676; text-decoration: none; font-weight: bold;">Leia mais →</a>
+        </article>
 
-            <article class="post" data-categoria="ps2">
-                <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=600&auto=format&fit=crop" alt="Controle de PS2">
-                <div class="post-content">
-                    <span class="categoria cat-ps2">PlayStation 2</span>
-                    <h2>Os Melhores RPGs que Marcaram a Era do PS2</h2>
-                    <p>O PlayStation 2 foi o lar de alguns dos maiores jogos de RPG da história. Hoje vamos relembrar títulos que gastaram centenas de horas do nosso Memory Card...</p>
-                    <a href="#" class="btn-ler">Ler Mais</a>
-                </div>
-            </article>
+        <article>
+            <h2>Os Melhores Jogos para Começar a Correr em 2026</h2>
+            <div class="meta">
+                Postado em 5 de Julho, 2026 por <strong>SpeedyGonzales</strong> | <span class="categoria">Guias</span>
+            </div>
+            <p>Se você quer entrar no mundo do Speedrun mas não sabe por onde começar, jogos com físicas previsíveis e poucos elementos aleatórios (RNG) são as melhores opções. Separamos uma lista de 3 jogos clássicos e indie que têm as comunidades mais acolhedoras para novatos.</p>
+            <a href="#" style="color: #00e676; text-decoration: none; font-weight: bold;">Leia mais →</a>
+        </article>
 
-            <article class="post" data-categoria="emuladores">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop" alt="Jogos Antigos">
-                <div class="post-content">
-                    <span class="categoria cat-emuladores">Emuladores</span>
-                    <h2>Como Configurar o PCSX2 para Rodar em 4K</h2>
-                    <p>Quer reviver os clássicos do PS2 com gráficos super nítidos no seu computador? Confira o nosso guia definitivo de configuração do melhor emulador da atualidade.</p>
-                    <a href="#" class="btn-ler">Ler Mais</a>
-                </div>
-            </article>
-
-        </section>
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Nostalgia Gamer - Criado com VS Code</p>
+        <p>&copy; 2026 Speedrun Chronicles Blog. Criado no VS Code.</p>
     </footer>
-
-    <script>
-        function filtrarCategoria(categoria, elementoClicado) {
-            const posts = document.querySelectorAll('.post');
-            
-            posts.forEach(post => {
-                const categoriaPost = post.getAttribute('data-categoria');
-                
-                if (categoria === 'todos' || categoriaPost === categoria) {
-                    post.style.display = 'flex';
-                } else {
-                    post.style.display = 'none';
-                }
-            });
-
-            const links = document.querySelectorAll('nav a');
-            links.forEach(link => {
-                link.classList.remove('ativo');
-            });
-            
-            elementoClicado.classList.add('ativo');
-        }
-    </script>
 
 </body>
 </html>
