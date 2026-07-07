@@ -112,4 +112,348 @@
     </footer>
 
 </body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroSpeed | O Templo do Speedrun de PS2, PS3 e Emuladores</title>
+    <style>
+        :root {
+            --bg-principal: #0b0e14;
+            --bg-card: #151a24;
+            --cor-ps2: #00439c;
+            --cor-ps3: #ff3c00;
+            --cor-texto: #e2e8f0;
+            --cor-subtexto: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--cor-ps2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top right, rgba(0, 67, 156, 0.2), transparent);
+            z-index: 1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 span {
+            color: var(--cor-ps3);
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+            color: var(--cor-subtexto);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navegação */
+        nav {
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        /* Layout em Grid (Conteúdo + Sidebar) */
+        .layout-principal {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Área dos Posts */
+        .conteudo-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        article {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            border: 1px solid #222c3e;
+            transition: transform 0.2s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+        }
+
+        .artigo-corpo {
+            padding: 25px;
+        }
+
+        article h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            color: #ffffff;
+        }
+
+        .meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            color: var(--cor-subtexto);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .tag-ps2 { background-color: var(--cor-ps2); color: white; }
+        .tag-ps3 { background-color: var(--cor-ps3); color: white; }
+        .tag-emu { background-color: #10b981; color: white; }
+
+        article p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .botao-ler-mais {
+            display: inline-block;
+            color: #ffffff;
+            background-color: #2e3748;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .botao-ler-mais:hover {
+            background-color: #3e4b61;
+        }
+
+        /* Sidebar (Barra Lateral) */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #222c3e;
+        }
+
+        .widget h3 {
+            margin-top: 0;
+            color: #ffffff;
+            border-bottom: 2px solid #222c3e;
+            padding-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .lista-records {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lista-records li {
+            padding: 10px 0;
+            border-bottom: 1px solid #222c3e;
+            font-size: 0.9rem;
+        }
+
+        .lista-records li:last-child {
+            border-bottom: none;
+        }
+
+        .game-title {
+            font-weight: bold;
+            color: #ffffff;
+            display: block;
+        }
+
+        .game-time {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--cor-subtexto);
+            background-color: #0f172a;
+            margin-top: 60px;
+            border-top: 1px solid #222c3e;
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 900px) {
+            .layout-principal {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Retro<span>Speed</span></h1>
+        <p>O hub definitivo de Speedruns: PS2, PS3 e a revolução dos Emuladores.</p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">PlayStation 2</a>
+            <a href="#">PlayStation 3</a>
+            <a href="#">Emuladores</a>
+        </nav>
+    </header>
+
+    <div class="layout-principal">
+
+        <main class="conteudo-posts">
+
+            <article>
+                <div class="artigo-corpo">
+                    <span class="tag tag-emu">Emuladores</span>
+                    <h2>PCSX2 vs Hardware Real: A polêmica dos tempos de Loading</h2>
+                    <div class="meta">
+                        <span>Por <strong>EmuMaster</strong></span>
+                        <span>•</span>
+                        <span>7 de Julho, 2026</span>
+                    </div>
+                    <p>A comunidade de speedrun de PS2 debateu por anos a legalidade do uso de emuladores devido à velocidade de carregamento dos ISOs diretamente do SSD. Hoje, com a opção de "Fast Boot" desativada e limitadores rígidos no PCSX2, correr no PC se tornou a forma mais acessível de quebrar recordes sem gastar uma fortuna em mídias físicas antigas.</p>
+                    <a href="#" class="botao-ler-mais">Ler Artigo Completo</a>
+                </div>
+            </</article>
+
+            <article>
+                <div class="artigo-corpo">
+                    <span class="tag tag-ps2">PS2</span>
+                    <h2>God of War II: O "Deadly Return" que economiza minutos na Run Any%</h2>
+                    <div class="meta">
+                        <span>Por <strong>KratosRunner</strong></span>
+                        <span>•</span>
+                        <span>4 de Julho, 2026</span>
+                    </div>
+                    <p>Dominar o pulo duplo com a troca rápida de armas no ar revolucionou a categoria Any% de God of War II. Explicamos o passo a passo de como os runners abusam da colisão das paredes do Templo das Irmãs do Destino para pular seções inteiras de puzzles complexos.</p>
+                    <a href="#" class="botao-ler-mais">Ver Tutorial</a>
+                </div>
+            </article>
+
+            <article>
+                <div class="artigo-corpo">
+                    <span class="tag tag-ps3">PS3</span>
+                    <h2>Demon's Souls (Original): O Glitch do Duplicador de Itens ainda domina</h2>
+                    <div class="meta">
+                        <span>Por <strong>NexusWalker</strong></span>
+                        <span>•</span>
+                        <span>28 de Junho, 2026</span>
+                    </div>
+                    <p>Mesmo após o lançamento do remake para o PS5, a versão original do PS3 continua extremamente ativa no RPCS3. O famoso glitch do ferreiro Stockpile Thomas permite clonar almas de chefes logo no início da jogatina, criando builds quebradas em menos de 15 minutos de run.</p>
+                    <a href="#" class="botao-ler-mais">Acessar Guia de Glitch</a>
+                </div>
+            </article>
+
+        </main>
+
+        <aside>
+
+            <div class="widget">
+                <h3>🏆 Recordes Atuais (WR)</h3>
+                <ul class="lista-records">
+                    <li>
+                        <span class="game-title">GTA San Andreas (PS2)</span>
+                        <span class="meta">Any% No-Avisos</span>
+                        <span class="game-time">24m 12s</span> por <em>Runner01</em>
+                    </li>
+                    <li>
+                        <span class="game-title">God of War (PS2)</span>
+                        <span class="meta">Any% Normal</span>
+                        <span class="game-time">42m 05s</span> por <em>SpartanSpeed</em>
+                    </li>
+                    <li>
+                        <span class="game-title">Uncharted 2 (PS3)</span>
+                        <span class="meta">Any% Explorer</span>
+                        <span class="game-time">58m 47s</span> por <em>DrakeFast</em>
+                    </li>
+                    <li>
+                        <span class="game-title">Shadow of the Colossus (PS2)</span>
+                        <span class="meta">Hard Time Attack</span>
+                        <span class="game-time">31m 19s</span> por <em>AgroSpeed</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>💻 Dica de Emulação</h3>
+                <p style="font-size: 0.9rem; color: var(--cor-subtexto);">
+                    Para submeter runs de PS3 usando o emulador <strong>RPCS3</strong>, lembre-se de sempre deixar o contador de FPS visível na tela e travar a taxa de quadros de acordo com as regras específicas de cada jogo no site <em>speedrun.com</em>!
+                </p>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 RetroSpeed Blog. Feito com paixão pelos 60 FPS.</p>
+    </footer>
+
+</body>
 </html>
